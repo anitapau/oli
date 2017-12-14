@@ -10,8 +10,22 @@
   <button ion-button (click)="startrecording()"> Start </button>
   <button ion-button (click)="selectvideo()"> Select Video</button>
 
-  <button ion-button><ion-icon name="camera"></ion-icon> &nbsp; Take Photo</button>
-
   <video #myvideo> </video>
+
+  <button ion-button (click)="takePhoto()"><ion-icon name="camera"></ion-icon> &nbsp; Take Photo</button>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngfor="let photo of photos; let id=index">
+        <ion-card class="block">
+
+        <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+          <img [src]="photo" *ngif="photo"/>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 
 </ion-content>
