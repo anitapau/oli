@@ -56,6 +56,38 @@ export class HomePage {
     confirm.present();
   }
 
+  //Display the text field when the image is clicked
+  displayTextArea(index) {
+
+  let prompt= this.alertCtrl.create({
+    title: 'Write note',
+    inputs:[
+      {
+        name:'title',
+        placeholder:'Write note'
+      },
+    ],
+
+    buttons:[
+      {
+        text:'cancel',
+        handler: data=>{
+          console.log('cancel clicked');
+        }
+
+      },
+      {
+        text:'save',
+        handler: data=> {
+          console.log('save clicked')
+        }
+      }
+    ]
+  });
+  prompt.present();
+
+  }
+
 
   @ViewChild('myvideo') myVideo: any;
 

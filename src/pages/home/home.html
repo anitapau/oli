@@ -15,7 +15,7 @@
   <button ion-button (click)="takePhoto()"><ion-icon name="camera"></ion-icon> &nbsp; Take Photo</button>
   <ion-grid>
     <ion-row>
-      <ion-col col-6 *ngFor="let photo of photos; let id=index">
+      <ion-col col-6 *ngFor="let photo of photos; let id=index" (click)="displayTextArea(id)">
         <ion-card class="block">
 
         <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
